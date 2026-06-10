@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background: #f8fafc; color: #1e293b; }
+
+        nav {
+            background: white;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 14px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+        }
+        nav .logo { font-weight: 600; font-size: 15px; }
+        nav ul { list-style: none; display: flex; gap: 24px; }
+        nav ul a { font-size: 14px; color: #64748b; text-decoration: none; }
+        nav ul a:hover { color: #2563eb; }
+
+        .hero {
+            background: #f1f5f9;
+            padding: 48px 32px;
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .avatar {
+            width: 90px; height: 90px;
+            border-radius: 50%;
+            background: #dbeafe;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 30px; font-weight: 600; color: #1d4ed8;
+            flex-shrink: 0;
+        }
+        /* Si tienes foto: reemplaza .avatar por <img src="foto.jpg"> con los mismos estilos */
+        .hero h1 { font-size: 24px; font-weight: 600; margin-bottom: 6px; }
+        .hero .rol { font-size: 14px; color: #64748b; margin-bottom: 10px; }
+        .badge {
+            display: inline-block;
+            background: #dcfce7; color: #15803d;
+            font-size: 12px; padding: 4px 12px;
+            border-radius: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            padding: 24px 32px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+        }
+        .card-full { grid-column: 1 / -1; }
+        .card h2 {
+            font-size: 12px;
+            font-weight: 600;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 16px;
+        }
+
+        .info-fila { display: flex; gap: 12px; margin-bottom: 12px; }
+        .info-fila .icono { font-size: 18px; color: #94a3b8; margin-top: 1px; }
+        .info-fila .etiqueta { font-size: 11px; color: #94a3b8; }
+        .info-fila .valor { font-size: 14px; color: #1e293b; }
+
+        .contactos { display: flex; flex-direction: column; gap: 10px; }
+        .contacto-item { display: flex; align-items: center; gap: 10px; font-size: 14px; color: #1e293b; }
+        .contacto-item a { color: #2563eb; text-decoration: none; }
+        .contacto-item a:hover { text-decoration: underline; }
+
+        .sobre-mi { font-size: 14px; color: #475569; line-height: 1.8; }
+
+        .skills { display: flex; flex-wrap: wrap; gap: 8px; }
+        .tag {
+            background: #f1f5f9;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 6px 14px;
+            font-size: 13px;
+            color: #334155;
+        }
+
+        .proyectos { display: flex; flex-direction: column; gap: 10px; }
+        .proyecto {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 12px 14px;
+        }
+        .proyecto h3 { font-size: 14px; font-weight: 600; margin-bottom: 3px; }
+        .proyecto p { font-size: 13px; color: #64748b; }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 13px;
+            color: #94a3b8;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .grid { grid-template-columns: 1fr; padding: 16px; }
+            .card-full { grid-column: 1; }
+            .hero { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <span class="logo">Mi Informacion Personal</span>
+    <ul>
+        <li><a href="#educacion">Educación</a></li>
+        <li><a href="#habilidades">Habilidades</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="#enlaces">Enlaces</a></li>
+    </ul>
+</nav>
+
+<div class="hero">
+    <!-- Opción 1: Iniciales -->
+    <div class="avatar">LH</div>
+    <!-- Opción 2: Foto (descomenta y ajusta)
+    <img src="foto.jpg" style="width:90px;height:90px;border-radius:50%;object-fit:cover;">
+    -->
+    <div>
+        <h1>Lesly Yulissa Huerta Jara</h1>
+        <p class="rol">Estudiante de Inteligencia Artificial · Lima, Perú</p>
+        <span class="badge">✓ Disponible para proyectos</span>
+    </div>
+</div>
+
+<div class="grid">
+
+    <!-- EDUCACIÓN -->
+    <div class="card" id="educacion">
+        <h2>🎓 Educación</h2>
+        <div class="info-fila">
+            <div>
+                <div class="etiqueta">Universidad</div>
+                <div class="valor">Universidad Nacional Mayor de San Marcos</div>
+            </div>
+        </div>
+        <div class="info-fila">
+            <div>
+                <div class="etiqueta">Facultad</div>
+                <div class="valor">Facultad de Ingenieria de Sistemas e Informatica</div>
+            </div>
+        </div>
+        <div class="info-fila">
+            <div>
+                <div class="etiqueta">Carrera</div>
+                <div class="valor">Inteligencia Artificial</div>
+            </div>
+        </div>
+        <div class="info-fila">
+            <div>
+                <div class="etiqueta">Ciclo actual</div>
+                <div class="valor">1er ciclo · 2026</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CURSOS -->
+    <div class="card" id="cursos">
+        <h2>📚 CURSOS</h2>
+        <div class="cursos">
+            <div class="cursos-item"><a >Introducción a la Ciencia de la Computación</a></div>
+            <div class="cursos-item"><a >Cálculo I</a></div>
+            <div class="cursos-item"><a >Algebra y Geometría Analítica</a></div>
+            <div class="cursos-item"> Métodos de estudio universitario</div>
+            <div class="cursos-item"> Medio Ambiente y Desarrollo Sostenible</div>
+            <div class="cursos-item"> Desarrollo Personal y Liderazgo</div>
+            <div class="cursos-item"> Redacción y Técnicas de Comunicación Efectiva I</div>
+        </div>
+    </div>
+    <!-- CONTACTO -->
+    <div class="card" id="contacto">
+        <h2>📬 Contacto</h2>
+        <div class="contactos">
+            <div class="contacto-item">📧 <a href="mailto:tuemail@gmail.com">Leslyhuertajara@gmail.com</a></div>
+            <div class="contacto-item">💼 <a href="#">linkedin.com/in/lesly-yulissa-huerta-jara-6965ab3b6</a></div>
+            <div class="contacto-item">🐙 <a href="#">github.com/leslyhuerta</a></div>
+            <div class="contacto-item">📍 Lima, Perú</div>
+        </div>
+    </div>
+
+    <!-- SOBRE MÍ -->
+    <div class="card card-full">
+        <h2>👤 Sobre mí</h2>
+        <p class="sobre-mi">
+            Soy estudiante universitaria con pasión por las matemáticas, la inteligencia artificial
+            y el desarrollo web. Me interesa aplicar la tecnología para resolver problemas reales
+            y actualmente estoy aprendiendo programación. Busco crecer académicamente
+            y participar en proyectos prácticos que me permitan desarrollar nuevas habilidades.
+        </p>
+    </div>
+
+    <!-- HABILIDADES -->
+    <div class="card" id="habilidades">
+        <h2>🛠️ Habilidades</h2>
+        <div class="skills">
+            <span class="tag">Matemáticas</span>
+            <span class="tag">Inteligencia Artificial</span>
+            <span class="tag">Excel</span>
+            <span class="tag">PowerPoint</span>
+        </div>
+    </div>
+
+    <!-- ENLACES -->
+    <div class="card" id="enlaces">
+        <h2>💻 enlaces</h2>
+        <div class="enlaces">
+            <div class="enlaces">
+               <div class="contacto-item">💼 <a href="#">linkedin.com/school/unmsm</a></div>
+               <div class="contacto-item">💼 <a href="#">linkedin.com/in/ecuadrosv</a></div>
+               <div class="contacto-item">💼 <a href="#">linkedin.com/in/kiara-geraldine-zapana-yucra-661663346</a></div>
+               <div class="contacto-item">💼 <a href="#">linkedin.com/in/kiara-camila-achulli-rivera-8b2758406</a></div>
+               <div class="contacto-item">💼 <a href="#">linkedin.com/in/piero-alejandro-huaynate-espinoza-9a7126406</a></div>
+            
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<footer>© 2026 Lesly Huerta · Hecho con HTML & CSS</footer>
+
+</body>
+</html

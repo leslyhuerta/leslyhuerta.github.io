@@ -1,246 +1,210 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Portafolio</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-        body { background: #f8fafc; color: #1e293b; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesly Yulissa Huerta Jara | CV</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-        nav {
-            background: white;
-            border-bottom: 1px solid #e2e8f0;
-            padding: 14px 32px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-        }
-        nav .logo { font-weight: 600; font-size: 15px; }
-        nav ul { list-style: none; display: flex; gap: 24px; }
-        nav ul a { font-size: 14px; color: #64748b; text-decoration: none; }
-        nav ul a:hover { color: #2563eb; }
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    color: #1a1a1a;
+    line-height: 1.5;
+    padding: 30px 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
 
-        .hero {
-            background: #f1f5f9;
-            padding: 48px 32px;
-            display: flex;
-            align-items: center;
-            gap: 28px;
-            border-bottom: 1px solid #e2e8f0;
-        }
-        .avatar {
-            width: 90px; height: 90px;
-            border-radius: 50%;
-            background: #dbeafe;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 30px; font-weight: 600; color: #1d4ed8;
-            flex-shrink: 0;
-        }
-        /* Si tienes foto: reemplaza .avatar por <img src="foto.jpg"> con los mismos estilos */
-        .hero h1 { font-size: 24px; font-weight: 600; margin-bottom: 6px; }
-        .hero .rol { font-size: 14px; color: #64748b; margin-bottom: 10px; }
-        .badge {
-            display: inline-block;
-            background: #dcfce7; color: #15803d;
-            font-size: 12px; padding: 4px 12px;
-            border-radius: 20px;
-        }
+  .container {
+    display: flex;
+    gap: 40px;
+  }
 
-        .grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 18px;
-            padding: 24px 32px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        .card {
-            background: white;
-            border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            padding: 20px;
-        }
-        .card-full { grid-column: 1 / -1; }
-        .card h2 {
-            font-size: 12px;
-            font-weight: 600;
-            color: #94a3b8;
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-            margin-bottom: 16px;
-        }
+  /* Sidebar izquierda */
+  .sidebar {
+    flex: 0 0 220px;
+  }
 
-        .info-fila { display: flex; gap: 12px; margin-bottom: 12px; }
-        .info-fila .icono { font-size: 18px; color: #94a3b8; margin-top: 1px; }
-        .info-fila .etiqueta { font-size: 11px; color: #94a3b8; }
-        .info-fila .valor { font-size: 14px; color: #1e293b; }
+  .sidebar h3 {
+    font-weight: normal;
+    margin-bottom: 15px;
+  }
 
-        .contactos { display: flex; flex-direction: column; gap: 10px; }
-        .contacto-item { display: flex; align-items: center; gap: 10px; font-size: 14px; color: #1e293b; }
-        .contacto-item a { color: #2563eb; text-decoration: none; }
-        .contacto-item a:hover { text-decoration: underline; }
+  .sidebar img {
+    width: 100%;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+  }
 
-        .sobre-mi { font-size: 14px; color: #475569; line-height: 1.8; }
+  .sidebar ul {
+    list-style: none;
+  }
 
-        .skills { display: flex; flex-wrap: wrap; gap: 8px; }
-        .tag {
-            background: #f1f5f9;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            padding: 6px 14px;
-            font-size: 13px;
-            color: #334155;
-        }
+  .sidebar ul li {
+    margin-bottom: 12px;
+  }
 
-        .proyectos { display: flex; flex-direction: column; gap: 10px; }
-        .proyecto {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            padding: 12px 14px;
-        }
-        .proyecto h3 { font-size: 14px; font-weight: 600; margin-bottom: 3px; }
-        .proyecto p { font-size: 13px; color: #64748b; }
+  .sidebar ul li a {
+    color: #1a0dab;
+    text-decoration: underline;
+  }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            font-size: 13px;
-            color: #94a3b8;
-            border-top: 1px solid #e2e8f0;
-            margin-top: 20px;
-        }
+  /* Contenido principal */
+  .main {
+    flex: 1;
+  }
 
-        @media (max-width: 600px) {
-            .grid { grid-template-columns: 1fr; padding: 16px; }
-            .card-full { grid-column: 1; }
-            .hero { flex-direction: column; text-align: center; }
-        }
-    </style>
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+  }
+
+  .header-text h1 {
+    font-size: 2.2em;
+    margin-bottom: 15px;
+  }
+
+  .header-text p {
+    margin-bottom: 5px;
+  }
+
+  .header img {
+    height: 100px;
+    margin-left: 20px;
+  }
+
+  .logos {
+    text-align: center;
+  }
+
+  .logos p {
+    font-weight: bold;
+    margin-top: 5px;
+  }
+
+  h2 {
+    color: #1a4fcc;
+    border-bottom: none;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+  }
+
+  ul.content-list {
+    margin-left: 25px;
+    margin-bottom: 15px;
+  }
+
+  ul.content-list li {
+    margin-bottom: 8px;
+  }
+
+  a {
+    color: #1a0dab;
+  }
+
+  .footer-note {
+    margin-top: 30px;
+    font-size: 0.9em;
+    color: #555;
+  }
+</style>
 </head>
 <body>
 
-<nav>
-    <span class="logo">Mi Informacion Personal</span>
+<div class="container">
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h3>Computer Science</h3>
+    <img src="lesly.jpg.jpeg" alt="Foto de perfil">
     <ul>
-        <li><a href="#educacion">Educación</a></li>
-        <li><a href="#habilidades">Habilidades</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-        <li><a href="#enlaces">Enlaces</a></li>
+      <li><a href="#formacion">Formación</a></li>
+      <li><a href="#intereses">Áreas de Interés</a></li>
+      <li><a href="#enlaces">Enlaces</a></li>
+      <li><a href="#cursos">Cursos</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+      <li><a href="#colaboradores">Colaboradores</a></li>
     </ul>
-</nav>
+  </div>
 
-<div class="hero">
-    <!-- Opción 1: Iniciales -->
-    <div class="avatar">LH</div>
-    <!-- Opción 2: Foto (descomenta y ajusta)
-    <img src="foto.jpg" style="width:90px;height:90px;border-radius:50%;object-fit:cover;">
-    -->
-    <div>
+  <!-- Contenido principal -->
+  <div class="main">
+
+    <div class="header">
+      <div class="header-text">
         <h1>Lesly Yulissa Huerta Jara</h1>
-        <p class="rol">Estudiante de Inteligencia Artificial · Lima, Perú</p>
-        <span class="badge">✓ Disponible para proyectos</span>
-    </div>
-</div>
-
-<div class="grid">
-
-    <!-- EDUCACIÓN -->
-    <div class="card" id="educacion">
-        <h2>🎓 Educación</h2>
-        <div class="info-fila">
-            <div>
-                <div class="etiqueta">Universidad</div>
-                <div class="valor">Universidad Nacional Mayor de San Marcos</div>
-            </div>
-        </div>
-        <div class="info-fila">
-            <div>
-                <div class="etiqueta">Facultad</div>
-                <div class="valor">Facultad de Ingenieria de Sistemas e Informatica</div>
-            </div>
-        </div>
-        <div class="info-fila">
-            <div>
-                <div class="etiqueta">Carrera</div>
-                <div class="valor">Inteligencia Artificial</div>
-            </div>
-        </div>
-        <div class="info-fila">
-            <div>
-                <div class="etiqueta">Ciclo actual</div>
-                <div class="valor">1er ciclo · 2026</div>
-            </div>
-        </div>
+        <p>Estudiante de Ingeniería de Inteligencia Artificial</p>
+        <p>Universidad Nacional Mayor de San Marcos</p>
+        <p><a href="mailto:correo@unmsm.com">lesly.huertaj@unmsm.com</a></p>
+        <p>Lima, Perú</p>
+      </div>
+      <div class="logos">
+        <img src="fisi.jpg" alt="Logos UNMSM y FISI">
+        <p>Facultad de Ingeniería de Sistemas e Informática (FISI)</p>
+      </div>
     </div>
 
-    <!-- CURSOS -->
-    <div class="card" id="cursos">
-        <h2>📚 CURSOS</h2>
-        <div class="cursos">
-            <div class="cursos-item"><a >Introducción a la Ciencia de la Computación</a></div>
-            <div class="cursos-item"><a >Cálculo I</a></div>
-            <div class="cursos-item"><a >Algebra y Geometría Analítica</a></div>
-            <div class="cursos-item"> Métodos de estudio universitario</div>
-            <div class="cursos-item"> Medio Ambiente y Desarrollo Sostenible</div>
-            <div class="cursos-item"> Desarrollo Personal y Liderazgo</div>
-            <div class="cursos-item"> Redacción y Técnicas de Comunicación Efectiva I</div>
-        </div>
-    </div>
-    <!-- CONTACTO -->
-    <div class="card" id="contacto">
-        <h2>📬 Contacto</h2>
-        <div class="contactos">
-            <div class="contacto-item">📧 <a href="mailto:tuemail@gmail.com">Leslyhuertajara@gmail.com</a></div>
-            <div class="contacto-item">💼 <a href="#">linkedin.com/in/lesly-yulissa-huerta-jara-6965ab3b6</a></div>
-            <div class="contacto-item">🐙 <a href="#">github.com/leslyhuerta</a></div>
-            <div class="contacto-item">📍 Lima, Perú</div>
-        </div>
-    </div>
+    <h2 id="formacion">Formación Académica</h2>
+    <ul class="content-list">
+      <li><strong>Pregrado:</strong> Ingeniería de Inteligencia Artificial (Ciclo 2026-1).</li>
+      <li><strong>Idiomas:</strong> Español (Nativo) | Inglés (Nivel Básico - En curso)</li>
+      <li><strong>Habilidades blandas:</strong> comunicación asertiva, trabajo en equipo y gestión de tiempo.</li>
+    </ul>
 
-    <!-- SOBRE MÍ -->
-    <div class="card card-full">
-        <h2>👤 Sobre mí</h2>
-        <p class="sobre-mi">
-            Soy estudiante universitaria con pasión por las matemáticas, la inteligencia artificial
-            y el desarrollo web. Me interesa aplicar la tecnología para resolver problemas reales
-            y actualmente estoy aprendiendo programación. Busco crecer académicamente
-            y participar en proyectos prácticos que me permitan desarrollar nuevas habilidades.
-        </p>
-    </div>
+    <h2 id="intereses">Áreas de Interés</h2>
+    <p>Me interesa aplicar la tecnología para resolver problemas reales y actualmente estoy aprendiendo programación. Busco crecer académicamente y participar en proyectos prácticos que me permitan desarrollar nuevas habilidades.</p>
+    <ul class="content-list">
+      <li><strong>IA y Automatización:</strong> Diseño e implementación de modelos de aprendizaje automático empleando Python.</li>
+      <li><strong>Desarrollo y Eficiencia Algorítmica:</strong> Construcción de software estructurado.</li>
+      <li><strong>Gestión de Proyectos y Código:</strong> Control de versiones mediante GitHub.</li>
+    </ul>
 
-    <!-- HABILIDADES -->
-    <div class="card" id="habilidades">
-        <h2>🛠️ Habilidades</h2>
-        <div class="skills">
-            <span class="tag">Matemáticas</span>
-            <span class="tag">Inteligencia Artificial</span>
-            <span class="tag">Excel</span>
-            <span class="tag">PowerPoint</span>
-        </div>
-    </div>
+    <h2 id="enlaces">Enlaces de Interés</h2>
+    <ul class="content-list">
+      <li>Lesly Yulissa Huerta Jara en <a href="https://github.com/leslyhuerta" target="_blank">GitHub</a></li>
+      <li>Lesly Yulissa Huerta Jara en <a href="https://linkedin.com/in/lesly-yulissa-huerta-jara-6965ab3b6" target="_blank">LinkedIn</a></li>
+    </ul>
 
-    <!-- ENLACES -->
-    <div class="card" id="enlaces">
-        <h2>💻 enlaces</h2>
-        <div class="enlaces">
-            <div class="enlaces">
-               <div class="contacto-item">💼 <a href="#">linkedin.com/school/unmsm</a></div>
-               <div class="contacto-item">💼 <a href="#">linkedin.com/in/ecuadrosv</a></div>
-               <div class="contacto-item">💼 <a href="#">linkedin.com/in/kiara-geraldine-zapana-yucra-661663346</a></div>
-               <div class="contacto-item">💼 <a href="#">linkedin.com/in/kiara-camila-achulli-rivera-8b2758406</a></div>
-               <div class="contacto-item">💼 <a href="#">linkedin.com/in/piero-alejandro-huaynate-espinoza-9a7126406</a></div>
-            
-            </div>
-        </div>
-    </div>
+    <h2 id="cursos">Cursos Académicos</h2>
+    <ul class="content-list">
+      <li><strong>INO110 - Introducción a la Computación:</strong> Fundamentos de lógica computacional, diseño de algoritmos y bases de programación.</li>
+      <li><strong>INO104 - Cálculo I:</strong> Estudio de límites, continuidad, derivadas y optimización de funciones.</li>
+      <li><strong>INO106 - Álgebra y Geometría Analítica:</strong> Análisis de vectores, matrices y sistemas de ecuaciones lineales.</li>
+      <li><strong>INO107 - Medio Ambiente y Desarrollo Sostenible:</strong> Comprensión del impacto ecológico y criterios de sostenibilidad.</li>
+       <li><strong>INO101 - Redacción y Técnicas de Comunicación Efectiva I :</strong>  Desarrollo de capacidades para la expresión escrita, estructuración de informes técnicos y argumentación formal.</li>
+        <li><strong>INO103 - Desarrollo Personal y Liderazgo:</strong> Potenciación del trabajo en equipo, autoconocimiento, inteligencia emocional y habilidades de liderazgo.</li>
+         <li><strong>INO102 - Métodos de Estudio Universitario:</strong> Técnicas de investigación, estrategias de aprendizaje autónomo y gestión eficiente del tiempo.</li>
+    </ul>
+
+    <h2 id="contacto">Contacto</h2>
+    <ul class="content-list">
+      <li><strong>Correo Institucional:</strong> <a href="mailto:correo@unmsm.com">lesly.huertaj@unmsm.com</a></li>
+      <li><strong>Correo Personal:</strong> <a href="mailto:personal@gmail.com">leslyhuertajara@gmail.com</a></li>
+    </ul>
+
+    <h2 id="colaboradores">Colaboradores</h2>
+    <ol class="content-list">
+      <li>Prof. Ernesto Cuadros Vargas: <a href="#">linkedin.com/in/ecuadrosv</a></li>
+      <li>Kiara Camila Achulli Rivera: <a href="#">linkedin.com/in/kiara-camila-achulli-rivera-8b2758406</a></li>
+       <li>Piero Alejandro Huaynate Espinoza : <a href="#">linkedin.com/in/piero-alejandro-huaynate-espinoza-9a7126406</a></li>
+        <li>Kiara Geraldine Zapana Yucra: <a href="#">linkedin.com/in/kiara-geraldine-zapana-yucra-661663346</a></li>
+         <li>Miguel Adrian Araujo Razo: <a href="#">linkedin.com/in/miguel-adrian-araujo-razo-a11b3a404</a></li>
+          <li>David Santiago Castro Neri: <a href="#">linkedin.com/in/david-santiago-castro-neri-18462131a</a></li>
+           <li>Luis Angel Julca Franco: <a href="#">linkedin.com/in/luis-angel-julca-franco-818920398</a></li>
+    </ol>
+
+
+  </div>
 
 </div>
-
-<footer>© 2026 Lesly Huerta · Hecho con HTML & CSS</footer>
 
 </body>
-</html
+</html>
